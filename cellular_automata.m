@@ -1,5 +1,5 @@
 clear all;clc;close all
-N = 700;
+N = 1500;
 x = 1:1:N+1;
 y = 1:1:N+1;
 
@@ -13,15 +13,15 @@ for i = 1:N
     elseif Z(i,j-1) == 1 && Z(i,j) == 1 && Z(i,j+1) == 0
       Z(i+1,j) = 1;
     elseif Z(i,j-1) == 1 && Z(i,j) == 0 && Z(i,j+1) == 1
-      Z(i+1,j) = 1;
+      Z(i+1,j) = 0;
     elseif Z(i,j-1) == 0 && Z(i,j) == 1 && Z(i,j+1) == 1
       Z(i+1,j) = 1;
     elseif Z(i,j-1) == 0 && Z(i,j) == 0 && Z(i,j+1) == 1
       Z(i+1,j) = 1;
     elseif Z(i,j-1) == 0 && Z(i,j) == 1 && Z(i,j+1) == 0
-      Z(i+1,j) = 1;
-    elseif Z(i,j-1) == 1 && Z(i,j) == 0 && Z(i,j+1) == 0
       Z(i+1,j) = 0;
+    elseif Z(i,j-1) == 1 && Z(i,j) == 0 && Z(i,j+1) == 0
+      Z(i+1,j) = 1;
     elseif Z(i,j-1) == 0 && Z(i,j) == 0 && Z(i,j+1) == 0
       Z(i+1,j) = 0;
     end
